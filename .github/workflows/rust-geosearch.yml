@@ -1,0 +1,16 @@
+name: rust-geosearch
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo fmt --all --check
+      - run: cargo test --workspace
+      - run: cargo run -p geo-ingest -- prepare --config countries/colombia.toml --input data/sample/colombia.csv --output work/ci-colombia-index
+      - run: cargo run -p geo-ingest -- stats --index work/ci-colombia-index

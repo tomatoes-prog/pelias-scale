@@ -1,0 +1,5 @@
+id,source,layer,name,label,lat,lon,country,region,locality,neighbourhood,street,aliases,popularity
+wof:locality:bogota,whosonfirst,locality,Bogotá,"Bogotá, Colombia",4.711,-74.0721,Colombia,Bogotá D.C.,Bogotá,,,Bogota|Santa Fe de Bogota,10
+oa:address:calle-72,openaddresses,address,Calle 72,"Calle 72, Bogotá, Colombia",4.658,-74.059,Colombia,Bogotá D.C.,Bogotá,Chapinero,Calle 72,,5
+wof:locality:medellin,whosonfirst,locality,Medellín,"Medellín, Antioquia, Colombia",6.2442,-75.5812,Colombia,Antioquia,Medellín,,,Medellin,9
+osm:venue:parque-lleras,openstreetmap,venue,Parque Lleras,"Parque Lleras, Medellín, Colombia",6.2088,-75.5679,Colombia,Antioquia,Medellín,El Poblado,,Parque de Lleras,7
