@@ -1,0 +1,15 @@
+[workspace]
+members = [
+  "crates/geo-core",
+  "crates/geo-ingest",
+  "crates/geo-backend-elastic",
+  "crates/geo-backend-manticore",
+  "crates/geo-backend-local",
+  "crates/geo-api"
+]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+license = "MIT"
+rust-version = "1.85"

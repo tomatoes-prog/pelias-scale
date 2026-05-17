@@ -1,0 +1,20 @@
+# Rust geosearch runtime image. The workspace has no third-party Rust crates, so builds are
+# reproducible in restricted environments and do not require a package registry during CI.
+FROM rust:1.85-bookworm AS builder
+WORKDIR /app
+COPY Cargo.toml Cargo.lock ./
+COPY crates ./crates
+RUN cargo build --release --workspace
+
+FROM debian:bookworm-slim AS runtime
+RUN useradd --create-home --shell /usr/sbin/nologin geosearch
+WORKDIR /app
+COPY --from=builder /app/target/release/geo-api /usr/local/bin/geo-api
+COPY --from=builder /app/target/release/geo-ingest /usr/local/bin/geo-ingest
+COPY countries ./countries
+COPY data/sample ./data/sample
+RUN mkdir -p /data && chown -R geosearch:geosearch /data /app
+USER geosearch
+EXPOSE 8080
+ENV GEO_CONFIG=/app/countries/colombia.toml GEO_INDEX=/data/colombia-index GEO_BIND=0.0.0.0:8080
+CMD ["geo-api"]

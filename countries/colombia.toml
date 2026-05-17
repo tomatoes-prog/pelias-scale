@@ -1,0 +1,24 @@
+# Prototype single-country configuration for Colombia.
+country_code = "CO"
+country_name = "Colombia"
+languages = ["es"]
+timezone = "America/Bogota"
+
+[bounds]
+min_lon = -79.1
+min_lat = -4.3
+max_lon = -66.8
+max_lat = 13.6
+
+[data.openstreetmap]
+# Example extract provider. Pin checksums before production use.
+pbf_url = "https://download.geofabrik.de/south-america/colombia-latest.osm.pbf"
+
+[data.whosonfirst]
+country_id = 85632519
+
+[search]
+default_limit = 10
+autocomplete_limit = 8
+reverse_radius_meters = 250
+preferred_layers = ["address", "venue", "street", "locality", "region"]

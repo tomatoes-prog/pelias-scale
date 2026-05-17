@@ -1,0 +1,11 @@
+query,expected_layer,notes
+Bogota,locality,accent-insensitive city query
+Bogotá,locality,accented city query
+Medellin,locality,major city without accent
+Calle 72 Bogota,address,street/address-style query
+Parque Lleras,venue,well-known POI in Medellin
+Barranquilla,locality,Caribbean city query
+Cali,locality,major city query
+Cartagena de Indias,locality,official locality name
+Chapinero,neighbourhood,Bogota neighbourhood
+Antioquia,region,department query
